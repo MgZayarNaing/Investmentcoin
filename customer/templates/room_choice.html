@@ -1,0 +1,70 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="roomcontainer">
+
+        <button class="box bgcolor1" onclick="myFunction()">
+            <div class="sector">
+                <h4>Number of Transctions 6231</h4>
+                <h4>Single minimum purchase 1</h4>
+            </div>
+            <div class="sector">
+                <h4>NEW MEMBER</h4>
+                <h4>Minimum entry balance 100 </h4>
+            </div>
+        </button>
+
+        <div class="box bgcolor2" onclick="myFunction()">
+            <div class="sector">
+                <h4>Number of Transctions 2066</h4>
+                <h4>Single minimum purchase 5</h4>
+            </div>
+            <div class="sector">
+                <h4>INTERMEDIATE</h4>
+                <h4>Minimum entry balance 5,000</h4>
+            </div>
+        </div>
+
+        <button class="box bgcolor3" onclick="myFunction()">
+            <div class="sector">
+                <h4>Number of Transctions 6231</h4>
+                <h4>Single minimum purchase 10</h4>
+            </div>
+            <div class="sector">
+                <h4>ADVANCED</h4>
+                <h4>Minimum entry balance 20,000 </h4>
+            </div>
+        </button>
+
+        <button class="box bgcolor4" onclick="myFunction()">
+            <div class="sector">
+                <h4>Number of Transctions 6231</h4>
+                <h4>Single minimum purchase 50</h4>
+            </div>
+            <div class="sector">
+                <h4>VIP ROOM</h4>
+                <h4>Minimum entry balance 50,000 </h4>
+            </div>
+        </button>
+    </div>
+</section>
+
+<script>
+    //const countdownElement = document.getElementById('timer');
+    const socket = new WebSocket(`ws://${window.location.host}/ws/countdown/`);
+    // chatSocket = new WebSocket(`ws://${window.location.host}/ws/${chatRoomUuid}/`)
+
+    socket.onmessage = function (event) {
+        const message = event.data;
+        if (message == "start_process") {
+            // window.location.href='/app/random/'
+            // Handle starting the next process
+            console.log(message)
+        } else {
+            //countdownElement.innerHTML = message;
+            console.log(message)
+        }
+    };
+</script>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- account section starts -->
+
+<section class="account">
+
+    <div class="image">
+        <img src="{% static 'images/accountpage.jpg' %}">
+        <p>My Account</p>
+    </div>
+
+    <div class="account-container">
+        <div class="profile-box">
+            <div class="myprofile">
+                <div class="about">
+                    <span>My Profile : {{user.name}}</span>
+                    <p>Last login : {{user.last_login}}</p>
+                    <p>Account no. : {{user.account_number}}</p>
+                </div>
+                <div class="profile">
+                    <img src="{{user.profile.url}}">
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td>User Code</td>
+                    <td>{{user.id}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone No.</td>
+                    <td>{{user.phone}}</td>
+                </tr>
+                <tr>
+                    <td>Accounts Type</td>
+                    <td style="text-transform: capitalize;">{{user.role}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{user.address}}</td>
+                </tr>
+                <tr>
+                    <td><a href="/account/logout/">Logout</a></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="data-box">
+            <div class="detail-box">
+                <h3>Account Detail</h3>
+                <div class="sector">
+                    <div class="balance">
+                        <p>Account Balance</p>
+                        <p>
+                            <strong>
+                                {% if coin %}
+
+                                $ {{coin.quantity}} {{coin.coin_type}}
+
+                                {% else %}
+
+                                $ 0
+                                
+                                {% endif %}
+                            </strong>
+                        </p>
+                    </div>
+                    <a href="/customer/deposit/" style="padding:.5rem 1.4rem;">Add</a>
+                </div>
+                <div class="sector">
+                    <div class="balance">
+                        <p>Invest amount</p>
+                        <p><strong>$85,259.99</strong></p>
+                    </div>
+                    <a href="#" style="padding:.5rem 1rem;">Invest</a>
+                </div>
+            </div>
+            <div class="detail-box">
+                <div class="top-box">
+                    <h3>Recent Status</h3>
+                    <form class="search-form">
+                        <input type="search" placeholder="search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                </div>
+                <div class="sector">
+                    <div class="balance">
+                        <p>Last withdrawl</p>
+                        <p><strong>$5,629.00</strong></p>
+                    </div>
+                    <span>Successful</span>
+                </div>
+                <div class="sector">
+                    <div class="balance">
+                        <p>Last invest</p>
+                        <p><strong>$2,951.00</strong></p>
+                    </div>
+                    <span>Successful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- account section ends -->
+
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}
