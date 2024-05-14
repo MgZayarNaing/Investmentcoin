@@ -81,3 +81,29 @@ def RoomChoice(request):
     user = User.objects.get(id = request.user.id)
     return render(request,'room_choice.html',{"user":user})
 
+def NewMember(request):
+    ran = RandomModel.objects.get(status="now")
+    current_user = User.objects.get(email = request.user.email)
+    roundno = ran.roundno
+    history = RandomModel.objects.filter(status="used").order_by("-id")[:5] 
+    dh = RandomModel.objects.filter(status="used").order_by("-id")[5:]
+    balance = CoinModel.objects.get(customer=current_user.id)
+
+    for d in dh:
+        d.delete()
+
+    uhistroy = ""
+    uh = []
+    try:
+        uhistroy = UserChoiceModel.objects.filter(user=current_user.id).order_by("-id")
+    except:
+        uhistroy = "No history" 
+
+    if len(uhistroy) > 5:
+        uh = list(uhistroy)[:5]
+    else:
+        uh = list(uhistroy)
+
+    context={"roundno":roundno,"histroy":history,"b":balance.quantity,"uh":uh}
+    return render(request,"new_member.html",context)
+

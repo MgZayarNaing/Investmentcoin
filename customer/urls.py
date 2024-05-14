@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from customer import views
+from customer import views,randomviews
 
 app_name = "customer"
 
@@ -25,4 +25,8 @@ urlpatterns = [
     path('account/',views.Account),
     path('deposit/',views.Deposit),
     path('room/',views.RoomChoice),
+    path('random/',randomviews.RandomCreate,name="randomc"),
+    path('new_member/',views.NewMember),
+    path('upick/<str:uc>/<str:am>/',randomviews.UserChoice),
+    path('uhistroy/',randomviews.UserChoiceHistroy),
 ]

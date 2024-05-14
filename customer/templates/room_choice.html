@@ -51,6 +51,10 @@
 </section>
 
 <script>
+
+    const myFunction =  () => {
+        window.location.href='/customer/new_member/'
+    }
     //const countdownElement = document.getElementById('timer');
     const socket = new WebSocket(`ws://${window.location.host}/ws/countdown/`);
     // chatSocket = new WebSocket(`ws://${window.location.host}/ws/${chatRoomUuid}/`)

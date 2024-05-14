@@ -1,0 +1,582 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br>
+
+<style>
+    .a1 {
+        background-color: gray;
+        width: 100%;
+        /* height: 100vh; */
+    }
+
+    .b1 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .b2 {
+        display: block;
+        width: 50%;
+        margin: 50px 50px 0 50px;
+
+    }
+
+    .c1 {
+        color: white;
+        font-size: 3.75rem;
+    }
+
+    .c2 {
+        background-color: #0b0b0b;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 12px;
+        box-shadow: 5px 5px 2.5px gray;
+
+    }
+
+    .c2 h2 {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .c3 {
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        gap: 150px;
+    }
+
+    span {
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+    }
+
+    .c4 {
+        background-color: #0b0b0b;
+        color: white;
+        font-size: 1.75rem;
+        width: 250px;
+        height: 50px;
+        margin-top: 15px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .c5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .c6 {
+        background-color: blue;
+        color: white;
+        width: 100px;
+        height: 40px;
+        font-size: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border: 2px solid white;
+    }
+
+    .c7 {
+        background-color: red;
+        color: white;
+        width: 100px;
+        height: 40px;
+        font-size: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border: 2px solid white;
+    }
+
+    .b3 {
+        display: block;
+        width: 50%;
+
+    }
+
+    .t1 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+    }
+
+    .t2 {
+        display: block;
+        width: 50%;
+        /* margin: 50px; */
+
+    }
+
+    .t3 {
+        background-color: #0b0b0b;
+        width: 500px;
+        height: 70px;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        border-radius: 24px;
+        padding: 20px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .t3 h1 {
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    .t4 {
+        display: flex;
+        width: 200px;
+        height: 70px;
+        background-color: gold;
+        justify-content: center;
+        align-items: center;
+        font-weight: 900;
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .t5 {
+        /* background-color: gold; */
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        margin-bottom: 20px;
+    }
+
+    .t5 .bull {
+        background-color: white;
+        border: 5px solid blue;
+        font-size: 2.75rem;
+        width: 150px;
+        border-radius: 25px;
+    }
+
+    .t5 .single {
+        background-color: white;
+        border: 5px solid red;
+        font-size: 2.75rem;
+        width: 150px;
+        border-radius: 25px;
+    }
+
+    .t6 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+    }
+
+    .t6 .am {
+        background-color: gray;
+        border: 5px solid white;
+        font-size: 2.75rem;
+        width: 150px;
+        border-radius: 12px;
+
+    }
+
+    .t7 {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        margin-bottom: 20px;
+    }
+
+    .t7 .bear {
+        background-color: white;
+        border: 5px solid red;
+        font-size: 2.75rem;
+        width: 150px;
+        border-radius: 25px;
+
+    }
+
+    .t7 .twin {
+        background-color: white;
+        border: 5px solid blue;
+        font-size: 2.75rem;
+        width: 150px;
+        border-radius: 25px;
+
+    }
+
+    .q1 {
+        width: 50%;
+    }
+
+    .q2 {
+        display: flex;
+        width: 800px;
+        height: 80px;
+        background-color: #494949;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        font-weight: 500;
+        border: 2px solid gold;
+        color: white;
+
+    }
+
+    .q3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .q4 {
+        display: flex;
+    }
+
+    .box3 {
+        width: 800px;
+
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: center;
+        border: 2px solid gold;
+        font-size: 1.75rem;
+        color: white;
+        font-weight: bold;
+
+    }
+
+    th {
+        background-color: #ffffff;
+        color: black;
+        border: 2px solid gold;
+        text-align: center;
+        font-size: 1.75rem;
+
+    }
+
+    .tb:hover {
+        background-color: #ffffff;
+        color: black;
+    }
+
+    .ans1 {
+        border: 2px solid white;
+        color: white;
+        border-radius: 10px;
+        width: 100px;
+        height: 35px;
+        background-color: blue;
+        font-weight: 900;
+    }
+
+    .ans2 {
+        border: 2px solid white;
+        color: white;
+        border-radius: 10px;
+        width: 100px;
+        height: 35px;
+        background-color: red;
+        font-weight: 900;
+
+    }
+</style>
+
+<div class="a1">
+    <div class="b1">
+        <div class="b2">
+            <center>
+                <h2 class="c1">US</h2>
+
+                <div class="c2">
+                    <h2>Total Amount</h2>
+                    <h2>{{b}} USDT</h2>
+
+                </div>
+
+                <div class="c3">
+                    <h1>Last Time</h1>
+                    <h1>71976</h1>
+                </div>
+
+                <span> Price Range</span>
+                <div class="c4">
+                    <h2>{{histroy.first.a}} + {{histroy.first.b}} + {{histroy.first.c}} = {{histroy.first.total}} </h2>
+                </div>
+                <div class="c5">
+                    {% if histroy.first.total <= 13 %}
+                    <h4 class="c6">Bear</h4>
+                    {% else %}
+                    <h4 class="c6">Bull</h4>
+                    {% endif %}
+                    {% if histroy.first.total|divisibleby:2 %}
+                    <h4 class="c7">Twin</h4>
+                    {% else %}
+                    <h4 class="c7">Single</h4>
+                    {% endif %}
+                </div>
+            </center>
+
+
+        </div>
+        <div class="b3">
+
+           <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <div class="t1">
+        <div class="t2">
+            <center>
+                <div class="t3">
+                    <h1>Open Time</h1>
+                    <h1>{{roundno}}</h1>
+                </div>
+                <div class="t4">
+                    <h1 id="timer">05:00</h1>
+                </div>
+                <div class="t5">
+                    <button class="bull" id="bull">Bull</button>
+                    <button class="single" id="single">Single</button>
+                </div>
+                <div class="t6">
+                    <h2 class="am" id="am">0</h2>
+                </div>
+                <div class="t7">
+                    <button class="bear" id="bear">Bear</button>
+                    <button class="twin" id="twin">Twin</button>
+                </div>
+                <div>
+                    <input type="number" id="cinput" min="1" />
+                    <button id="cbtn" >submit</button>
+                </div>
+                <button id="sub">SubMit</button>
+            </center>
+
+
+        </div>
+        <div class="q1">
+            <center>
+                <div class="q2">
+                    <h2>Recent History</h2>
+                </div>
+            </center>
+            <center>
+                <div class="q3">
+
+                    <center class="q4">
+                        <div class="box3">
+                            <table class="q5">
+                                <thead class="q6">
+                                    <tr>
+                                        <th>Round</th>
+                                        <th>Result</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for h in histroy %}
+                                    <tr class="tb">
+                                        <td>{{h.roundno}}</td>
+                                        <td>{{h.a}} + {{h.b}} + {{h.c}} = {{h.total}}</td>
+                                        <td>
+                                            {% if h.total <= 13 %}
+                                            <button class="ans1">Bear</button>
+                                            {% else %}
+                                            <button class="ans1">Bull</button>
+                                            {% endif %}
+                                            {% if h.total|divisibleby:2 %}
+                                            <button class="ans2">Twin</button>
+                                            {% else %}
+                                            <button class="ans2">Single</button>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </center>
+
+                </div>
+
+                <div class="box3">
+                            <table class="q5">
+                                <thead class="q6">
+                                    <tr>
+                                        <th>Round</th>
+                                        <th>User Choice</th>
+                                        <th>User Amount</th>
+                                        <th>Results</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for h in uh %}
+                                    <tr class="tb">
+                                        <td>{{h.roundno}}</td>
+                                        <td>{{h.choice}}</td>
+                                        <td>{{h.amount}}</td>
+                                        <td>{{h.result}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+            </center>
+            <input type="submit" hidden/>
+            <input type="text" value="{{b}}" id="b" hidden/>
+            <h6 id="u" hidden>{{u}}</h6>
+            <h6 id="userid" hidden>{{user.id}}</h6>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const countdownElement = document.getElementById('timer');
+    const socket = new WebSocket(`ws://${window.location.host}/ws/countdown/`);
+    // chatSocket = new WebSocket(`ws://${window.location.host}/ws/${chatRoomUuid}/`)
+
+    socket.onmessage = function (event) {
+        const message = event.data;
+        if (message == "start_process") {
+            window.location.href='/customer/random/'
+            // Handle starting the next process
+            console.log(message)
+        } else {
+            countdownElement.innerHTML = message;
+            console.log(message)
+        }
+    };
+
+const bull = document.getElementById("bull")
+const single = document.getElementById("single")
+const bear = document.getElementById("bear")
+const twin = document.getElementById("twin")
+
+const cinput = document.getElementById("cinput")
+const cbtn = document.getElementById("cbtn")
+const am = document.getElementById("am")
+const b = document.getElementById("b")
+
+const sub = document.getElementById("sub")
+const u = document.getElementById("u").innerHTML
+const userid = Number(document.getElementById("userid").innerHTML)
+
+let uc;
+const UChoice = (c)=> {
+    console.log("ok")
+    if(c=="bull"){
+        bull.style.backgroundColor="blue"
+        bear.style.backgroundColor="white"
+        single.style.backgroundColor="white"
+        twin.style.backgroundColor="white"
+    }else if(c=="bear"){
+         bull.style.backgroundColor="white"
+         bear.style.backgroundColor="red"
+        single.style.backgroundColor="white"
+        twin.style.backgroundColor="white"
+    }else if(c=="twin"){
+         bull.style.backgroundColor="white"
+         bear.style.backgroundColor="white"
+        single.style.backgroundColor="white"
+        twin.style.backgroundColor="blue"
+    }else{
+         bull.style.backgroundColor="white"
+         bear.style.backgroundColor="white"
+        single.style.backgroundColor="red"
+        twin.style.backgroundColor="white"
+    }
+        uc = c
+    }
+
+twin.addEventListener('click', function(){ UChoice("twin"); });
+
+single.addEventListener('click', function(){UChoice("single");});
+
+bull.addEventListener('click', function(){  UChoice("bull"); });
+
+bear.addEventListener('click', function(){ UChoice("bear");});
+
+cbtn.onclick = function(){ 
+    if( Number(cinput.value) > Number(b.value)){
+        alert("Not Enough coin")
+    }else{
+          am.innerHTML = Number(am.innerHTML) + Number(cinput.value)
+        cinput.value = ""
+    }
+ }
+sub.onclick = function(){
+            if(uc==undefined){
+            alert("Please Choose")
+            }else if(Number(am.innerHTML) < 1){
+                alert("Please Choose AMount")
+            }
+            else{
+             window.location.href = `/customer/upick/${uc}/${am.innerHTML}/`
+            }   
+
+}
+</script>
+
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [ {%for h in histroy %} '{{ h.roundno }}', {% endfor %}],
+      datasets: [{
+        label: 'first number',
+        data: [{%for h in histroy %} '{{ h.a }}', {% endfor %}],
+        borderWidth: 1
+      },
+      {
+        label: 'second number',
+        data: [{%for h in histroy %} '{{ h.b }}', {% endfor %}],
+        borderWidth: 1
+      },
+      {
+        label: 'third number',
+        data: [{%for h in histroy %} '{{ h.c }}', {% endfor %}],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+{% endblock %}
