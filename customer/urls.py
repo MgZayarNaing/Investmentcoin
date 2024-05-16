@@ -29,4 +29,5 @@ urlpatterns = [
     path('new_member/',views.NewMember),
     path('upick/<str:uc>/<str:am>/',randomviews.UserChoice),
     path('uhistroy/',randomviews.UserChoiceHistroy),
+    path('deposit_bonus/',views.DepositBonus)
 ]

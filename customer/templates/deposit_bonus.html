@@ -1,0 +1,118 @@
+{% extends 'customer_base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- deposit bonus section starts -->
+
+<section class="deposit-bonus">
+    <div class="box">
+        <p>Special offer</p>
+        <p>Open a trading account and Get a Bonus* up to $6000!</p>
+        <span>For a limited time*</span>
+        <div class="sector">
+            <p></p>
+            <a href="#">open live account</a>
+        </div>
+    </div>
+    <div class="text-box">
+        <span>About the offer</span>
+        <p style="margin-top: 2rem;">Trading with Future Trading View has many benefits. Now, you also get from us a welcome bonus up to $6000
+            when opening your trading account, so you can start your trading experience on a high note! All you need
+            to do is open an Future Trading View account and fund it with $100 or more. We will do the rest.</p>
+        <p>You can take advantage of the different tiers we offer – the more you deposit the more you are rewarded!</p>
+        <p>Check out the Promotion tiers below:</p>
+    </div>
+    <table>
+        <tr>
+            <th>TIER</th>
+            <th>DEPOSIT</th>
+            <th>BONUS</th>
+        </tr>
+        <tr>
+            <td style="color:#525F7F;font-weight: bold;">Tier 1</td>
+            <td>$1000 - $4999</td>
+            <td>6%</td>
+        </tr>
+        <tr>
+            <td style="color:#525F7F;font-weight: bold;">Tier 2</td>
+            <td>$5000 - $19999</td>
+            <td>8%</td>
+        </tr>
+        <tr>
+            <td style="color:#525F7F;font-weight: bold;">Tier 3</td>
+            <td>$20000 - $49999</td>
+            <td>10%</td>
+        </tr>
+        <tr>
+            <td style="color:#525F7F;font-weight: bold;">Tier 4</td>
+            <td>$50000</td>
+            <td>12%</td>
+        </tr>
+    </table>
+    <center><span class="heading">Get your Bonus in three easy steps</span></center>
+    <div class="gallery">
+        <div class="gallery-box">
+            <img src="{% static 'deposit-bonus.png' %}">
+            <p>1. Fill-in the online application.</p>
+            <p>It will take you no more then 10-15 minutes</p>
+        </div>
+        <div class="gallery-box">
+            <img src="{% static 'deposit-bonus2.png' %}">
+            <p>2. Deposit $100 or more</p>
+            <p>Fund with crypto</p>
+        </div>
+        <div class="gallery-box">
+            <img src="{% static 'deposit-bonus3.png' %}">
+            <p>3. Get Your Bonus up to $6000</p>
+            <p>Your account balance will be credited automatically, within 14 business days</p>
+        </div>
+    </div>
+    <center><span class="heading">Enjoy the Future Trading View Benefits</span></center>
+    <div class="benefit-box">
+        <div class="box">
+            <div class="data">
+                <svg width="21px" height="21px" fill="#01acb6" viewBox="0 0 100 100">
+                    <path d="M16.8 40.1l-16.9 18 38.4 35 61.6-69.9-19.3-17-45.1 50.5z"></path>
+                </svg>
+                <span>Zero Commission</span>
+            </div>
+            <div class="data">
+                <svg width="21px" height="21px" fill="#01acb6" viewBox="0 0 100 100">
+                    <path d="M16.8 40.1l-16.9 18 38.4 35 61.6-69.9-19.3-17-45.1 50.5z"></path>
+                </svg>
+                <span>Trade on-the-go with Future Trading View trading app</span>
+            </div>
+        </div>
+        <div class="box">
+            <div class="data">
+                <svg width="21px" height="21px" fill="#01acb6" viewBox="0 0 100 100">
+                    <path d="M16.8 40.1l-16.9 18 38.4 35 61.6-69.9-19.3-17-45.1 50.5z"></path>
+                </svg>
+                <span>Award-winning trading platform</span>
+            </div>
+            <div class="data">
+                <svg width="21px" height="21px" fill="#01acb6" viewBox="0 0 100 100">
+                    <path d="M16.8 40.1l-16.9 18 38.4 35 61.6-69.9-19.3-17-45.1 50.5z"></path>
+                </svg>
+                <span>Best of class customer support</span>
+            </div>
+        </div>
+    </div>
+    <center><span class="heading">Our Latest Awards</span></center>
+    <center>
+    <div class="image">
+        <img src="{% static 'deposit-bonus4.jpg' %}">
+    </div>
+    </center>
+    <div class="term-and-conditions">
+        <span class="heading">Disclosure</span>
+        <p>* <span>Terms and conditions</span> apply.</p>
+        <p>Please note, the bonus payment can only be withdrawn from your Qualifying Account once you have generated a round-turn notional trading volume of 50 FX or CFD contracts. JPN225 and XAG are excluded from this promotion.</p>
+        <p>When executing customers' trades, Future Trading View can be compensated in several ways, which include, but are not limited to: spreads, charging commissions at the open and close of a trade, and adding a mark-up to rollover, etc. Commission-based pricing is applicable to Active Trader account types.</p>
+        <p><b>Risk Warning:</b> Our service includes products that are traded on margin and carry a risk of losses in excess of your deposited funds. The products may not be suitable for all investors. Please ensure that you fully understand the risks involved.</p>
+    </div>
+</section>
+
+<!-- deposit bonus section ends -->
+
+{% endblock %}
