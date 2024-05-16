@@ -157,39 +157,47 @@
             <h3>US</h3>
             <div class="amount">
                 <p>Total Amount</p>
-                <p><strong>3000</strong> USDT</p>
+                <p><strong>{{b}}</strong> USDT</p>
             </div>
             <div class="last-time">
                 <p>Last Time</p>
-                <p>71978</p>
+                <p>9999</p>
             </div>
             <h3>Price Range</h3>
-            <p class="plus">6 + 9 + 17 + 10</p>
+            <p class="plus">{{histroy.first.a}} + {{histroy.first.b}} + {{histroy.first.c}} = {{histroy.first.total}}</p>
             <div class="button">
-                <button>Bear</button>
-                <button>Twin</button>
+                {% if histroy.first.total <= 13 %}
+                    <button>Bear</button>
+                    {% else %}
+                    <button>Bull</button>
+                    {% endif %}
+                    {% if histroy.first.total|divisibleby:2 %}
+                    <button>Twin</button>
+                    {% else %}
+                    <button>Single</button>
+                    {% endif %}
             </div>
             <div class="open-time">
                 <p>Open Time</p>
-                <p>112</p>
+                <p>{{roundno}}</p>
             </div>
-            <h3 class="time">2:34</h3>
+            <h3 class="time" id="timer">5:00</h3>
             <div class="button-2">
-                <button style="border:4px solid blue">Bull</button>
-                <button style="border:4px solid red">Single</button>
+                <button style="border:4px solid blue" id="bull">Bull</button>
+                <button style="border:4px solid red" id="single">Single</button>
             </div>
             <div class="box">
-                <p>0</p>
+                <p id="am">0</p>
             </div>
             <div class="button-2">
-                <button style="border:4px solid red">Bear</button>
-                <button style="border:4px solid blue">Twin</button>
+                <button style="border:4px solid red" id="bear">Bear</button>
+                <button style="border:4px solid blue" id="twin">Twin</button>
             </div>
             <div class="input">
-                <input type="text">
-                <button>Submit</button>
+                <input type="text" id="cinput">
+                <button id="cbtn">Submit</button>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" id="sub">Submit</button>
         </div>
         <div class="graph-table">
             <div class="graph">
@@ -210,49 +218,30 @@
                     <th>Result</th>
                     <th>Status</th>
                 </tr>
-                <tr>
-                    <td>111</td>
-                    <td>6 + 9 + 17 + 10</td>
-                    <td>
-                        <button>Bear</button>
-                        <button>Twin</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>110</td>
-                    <td>6 + 9 + 17 + 10</td>
-                    <td>
-                        <button>Bear</button>
-                        <button>Twin</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>109</td>
-                    <td>6 + 9 + 17 + 10</td>
-                    <td>
-                        <button>Bear</button>
-                        <button>Twin</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>108</td>
-                    <td>6 + 9 + 17 + 10</td>
-                    <td>
-                        <button>Bear</button>
-                        <button>Twin</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>107</td>
-                    <td>6 + 9 + 17 + 10</td>
-                    <td>
-                        <button>Bear</button>
-                        <button>Twin</button>
-                    </td>
-                </tr>
+                 {%for h in histroy %}
+                    <tr class="tb">
+                        <td>{{h.roundno}}</td>
+                        <td>{{h.a}} + {{h.b}} + {{h.c}} = {{h.total}}</td>
+                        <td>
+                            {% if h.total <= 13 %}
+                            <button>Bear</button>
+                            {% else %}
+                            <button>Bull</button>
+                            {% endif %}
+                            {% if h.total|divisibleby:2 %}
+                            <button>Twin</button>
+                            {% else %}
+                            <button>Single</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
             </table>
         </div>
     </div>
+    <input type="text" value="{{b}}" id="b" hidden/>
+            <h6 id="u" hidden>{{u}}</h6>
+            <h6 id="userid" hidden>{{user.id}}</h6>
 </section>
 
 <script>
@@ -343,7 +332,7 @@ sub.onclick = function(){
 </script>
 
 
-<script>
+<!-- <script>
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
@@ -374,6 +363,6 @@ sub.onclick = function(){
       }
     }
   });
-</script>
+</script> -->
 
 {% endblock %}

@@ -4,7 +4,7 @@
 <section style="margin-top: 6rem;">
     <div class="roomcontainer">
 
-        <button class="box bgcolor1" onclick="myFunction()">
+        <button class="box bgcolor1" onclick="myFunction(1)">
             <div class="sector">
                 <h4>Number of Transctions 6231</h4>
                 <h4>Single minimum purchase 1</h4>
@@ -15,7 +15,7 @@
             </div>
         </button>
 
-        <div class="box bgcolor2" onclick="myFunction()">
+        <div class="box bgcolor2" onclick="myFunction(2)">
             <div class="sector">
                 <h4>Number of Transctions 2066</h4>
                 <h4>Single minimum purchase 5</h4>
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <button class="box bgcolor3" onclick="myFunction()">
+        <button class="box bgcolor3" onclick="myFunction(3)">
             <div class="sector">
                 <h4>Number of Transctions 6231</h4>
                 <h4>Single minimum purchase 10</h4>
@@ -37,7 +37,7 @@
             </div>
         </button>
 
-        <button class="box bgcolor4" onclick="myFunction()">
+        <button class="box bgcolor4" onclick="myFunction(4)">
             <div class="sector">
                 <h4>Number of Transctions 6231</h4>
                 <h4>Single minimum purchase 50</h4>
@@ -52,23 +52,19 @@
 
 <script>
 
-    const myFunction =  () => {
-        window.location.href='/customer/new_member/'
-    }
-    //const countdownElement = document.getElementById('timer');
-    const socket = new WebSocket(`ws://${window.location.host}/ws/countdown/`);
-    // chatSocket = new WebSocket(`ws://${window.location.host}/ws/${chatRoomUuid}/`)
-
-    socket.onmessage = function (event) {
-        const message = event.data;
-        if (message == "start_process") {
-            // window.location.href='/app/random/'
-            // Handle starting the next process
-            console.log(message)
-        } else {
-            //countdownElement.innerHTML = message;
-            console.log(message)
+    const myFunction =  (id) => {
+        if(id == 1 && 100 <= '{{b}}'){
+            window.location.href='/customer/new_member/'
+        }else if(id == 2 && 5000 <= '{{b}}'){
+            window.location.href='#inter'
+        }else if(id == 3 && 20000 <= '{{b}}'){
+            window.location.href='#ad'
+        }else if(id == 4 && 50000 <= '{{b}}'){
+            window.location.href='#vip'
+        }else{
+            alert("Not Enough Coin !")
         }
-    };
+    }
+
 </script>
 {% endblock %}
