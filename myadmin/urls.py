@@ -40,4 +40,5 @@ urlpatterns = [
     path('deposit_history/',views.DepositHistory),
     path('withdraw_list/',views.WithdrawList),
     path('withdraw_history/',views.WithdrawHistory),
+    path('new_member_table/',views.NewMemberTable),
 ]

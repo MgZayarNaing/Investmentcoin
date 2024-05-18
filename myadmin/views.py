@@ -259,3 +259,6 @@ def AdminApproveWithdraw(request,w_id):
             withdraw_history.save()
             withdraw.save()
             return redirect('/myadmin/herosection/')
+        
+def NewMemberTable(request):
+    return render(request,"new_member_table.html")

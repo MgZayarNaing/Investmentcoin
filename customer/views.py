@@ -81,8 +81,12 @@ def Account(request):
 # @login_required(login_url='/account/login/')
 def RoomChoice(request):
     user = User.objects.get(id = request.user.id)
-    coin = CoinModel.objects.get(customer_id = request.user.id)
-    return render(request,'room_choice.html',{"user":user,"b":coin.quantity})
+    try:
+        coin = CoinModel.objects.get(customer_id = request.user.id)
+        return render(request,'room_choice.html',{"user":user,"b":coin.quantity})
+    except Exception as e:
+        coin = None
+        return render(request,"room_choice.html",{"user":user,"b": 0})
 
 def NewMember(request):
     ran = RandomModel.objects.get(status="now")
